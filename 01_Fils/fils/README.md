@@ -31,3 +31,20 @@ Ejecución del **segundo comportamiento**:
 <div>
   <img src="Ejecución_2.png" alt="Segunda ejecución" width="200">
 </div>
+
+<br>
+
+## <u>Tercera ejecución</u>:
+
+Código del **tercer comportamiento**:
+
+<div>
+  <img src="Main_3.png" alt="Main tercera ejecución" width="400"> 
+  <img src="Hilo_3.png" alt="Hilo tercera ejecución" width="300">
+</div>
+
+Ejecución del **tercer comportamiento**:
+
+<div>
+  <img src="Ejecución_3.png" alt="Tercera ejecución" width="200">
+</div>

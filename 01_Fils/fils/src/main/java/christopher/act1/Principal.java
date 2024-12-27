@@ -6,23 +6,7 @@ public class Principal {
         Fil juan = new Fil("Juan");
         Fil pepe = new Fil("Pepe");
         
-        pepe.start();
-        
-        try {
-            pepe.join();
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-        
         juan.start(); 
-        
-        try {
-            juan.join();
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-        
-        System.out.println("Termina el fil Pepe");
-        System.out.println("Termina el fil Juan");
+        pepe.start();
     }
 }
