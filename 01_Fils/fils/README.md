@@ -16,3 +16,20 @@ Ejecución del **primer comportamiento**:
 </div>
 
 <br>
+
+## <u>Segunda ejecución</u>:
+
+Código del **segundo comportamiento**:
+
+<div>
+  <img src="Main_2.png" alt="Hilo primera ejecución" width="300"> 
+  <img src="Hilo_2.png" alt="Hilo primera ejecución" width="400">
+</div>
+
+Ejecución del **segundo comportamiento**:
+
+<div>
+  <img src="Ejecución_2.png" alt="Hilo primera ejecución" width="200">
+</div>
+
+<br>

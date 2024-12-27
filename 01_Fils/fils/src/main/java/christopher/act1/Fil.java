@@ -16,6 +16,5 @@ public class Fil extends Thread{
         for (int i = 1; i <= 9; i++) {
             System.out.println(nombre + " " + i);
         }
-        System.out.println("Termina el fil Juan " + nombre);
     }
 }
