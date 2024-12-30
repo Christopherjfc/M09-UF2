@@ -10,7 +10,7 @@ public class MainDemoFil {
         System.out.println("MainDemoFil.main:");
         for (String nombres : futbolistas) {
             Futbolista fut = new Futbolista(nombres);
-            System.out.println("Prioritat  -> " + fut.getPriority() + ", -> " + hiloMain.getName());
+            System.out.println("Prioritat  -> " + fut.getPriority() + ", Nom -> " + hiloMain.getName());
             System.out.println("toString() -> " + fut.toString());
         }
     }
