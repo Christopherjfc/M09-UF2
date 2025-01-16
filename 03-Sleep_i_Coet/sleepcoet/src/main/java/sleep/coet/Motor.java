@@ -23,14 +23,14 @@ public class Motor extends Thread{
                 } else { 
                     // cuando se igualan las potencias, los motores se esperarán hasta que se introduzca una nueva potencia por consola
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 try {
                     // los motores se esperan 1s por cada incremento o decremento de potencia
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -41,7 +41,7 @@ public class Motor extends Thread{
                 System.out.printf("Motor %d: %s. Objectiu: %d Actual: %d%n",motor, (potenciaActual == potenciaObjectiu) ? "ResFer" : "Decre", potenciaObjectiu, potenciaActual);
                 if (potenciaActual == 0) break;
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
