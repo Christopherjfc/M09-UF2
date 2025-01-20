@@ -20,39 +20,29 @@ public class Traballador extends Thread {
         rnd = new Random();
     }
 
-    /*
-     * se tiene que hacer una simulación,
-     * cada mes, cada año, hasta llegar a la edat final
-     * SLEEP(100) DESPUES DE COBRAR Y PAGAR IMPUESTOS: para dejar a que carguen bien
-     * los hilos
-     */
-
     @Override
     public void run() {
-        int intervalo = rnd.nextInt(100);
-        while ((edat_actual + edat_inici_treball) != edat_fi_treball) {
-            for (int i = 0; i < 12; i++) {
-                cobra();
-                pagaImpostos();
+        int intervalo = rnd.nextInt(10);
+        for (edat_actual = edat_inici_treball; edat_actual < edat_fi_treball; edat_actual++) {
+            for (int j = 0; j < 12; j++) {
+                try {
+                    cobra();
+                    sleep(intervalo);
+                    pagaImpostos();
+                    sleep(intervalo);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            try {
-                sleep(intervalo);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            edat_actual++;
         }
-        System.out.printf("%s -> edat: Total: %.2f%n", getName(), cobrat);
-
     }
 
     public void cobra() {
-        cobrat += nou_anual_brut / 12; // salario mensual bruto
+        cobrat += nou_anual_brut / 12f; // salario mensual bruto
     }
 
     public void pagaImpostos() {
-        cobrat -= (nou_anual_brut / 12) * 0.24f; // Resta el 24% de impuestos al salario para que el salario mensual sea
-                                                 // neto
+        cobrat -= (nou_anual_brut / 12f) * 0.24f; // Resta el 24% de impuestos al salario para que el salario mensual sea neto
     }
 
     public int getEdat_actual() {
