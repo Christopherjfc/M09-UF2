@@ -20,22 +20,24 @@ public class Soci extends Thread{
 
     @Override
     public void run() {
-        int interval = rnd.nextInt(esperaMax);
-        float saldoCompte = compte.getSaldo();
-        for (int i = 0; i < maxAnys; i++) {
-            for (int j = 0; j < 12; j++) {
-                try {
-                    if (j % 2 == 0) {
-                        saldoCompte += aportacio;
-                        compte.setSaldo(saldoCompte);
-                        sleep(interval);
-                    }else {
-                        saldoCompte -= aportacio;
-                        compte.setSaldo(saldoCompte);
-                        sleep(interval);
+        synchronized(this){
+            int interval = rnd.nextInt(esperaMax);
+            float saldoCompte = compte.getSaldo();
+            for (int i = 0; i < maxAnys; i++) {
+                for (int j = 0; j < 12; j++) {
+                    try {
+                        if (j % 2 == 0) {
+                            saldoCompte += aportacio;
+                            compte.setSaldo(saldoCompte);
+                            sleep(interval);
+                        }else {
+                            saldoCompte -= aportacio;
+                            compte.setSaldo(saldoCompte);
+                            sleep(interval);
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
         }
