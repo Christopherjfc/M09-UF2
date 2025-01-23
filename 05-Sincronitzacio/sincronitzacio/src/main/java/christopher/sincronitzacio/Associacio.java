@@ -1,10 +1,12 @@
 package christopher.sincronitzacio;
 
 public class Associacio {
-    private static final int NUMSOCIS =1000;
-    private Soci[] socis = new Soci[NUMSOCIS];
+    private final int NUMSOCIS;
+    private Soci[] socis;
 
     public Associacio(){
+        NUMSOCIS = 1000;
+        socis = new Soci[NUMSOCIS];
         for (int i = 0; i < NUMSOCIS; i++) {
             socis[i] = new Soci("soci "+i ); 
         }

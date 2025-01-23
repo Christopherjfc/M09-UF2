@@ -6,6 +6,7 @@ public class Compte {
 
     private Compte(){}
 
+    // método singleton
     public static Compte getInstance(){
         if (instance == null) {
             instance = new Compte();
